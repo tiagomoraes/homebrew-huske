@@ -3,92 +3,37 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/41/a1/68f178c57f76dcc5a2d25427b8c153e364a8c39000fde12f05968e047e25/huske-0.2.0.tar.gz"
-  sha256 "78e5e1ccb3dd1e62b6ef1ff50ca9eb6e0744417a03cb4ef94145d5e8b71c40c4"
+  url "https://files.pythonhosted.org/packages/4f/4a/16e6b59d37c570f6abec1b58c31059aade20a45cec77916fb879422dcfb6/huske-0.3.1.tar.gz"
+  sha256 "3a5cf68f2717856280784ca290ad23ffc0d925d13d7eef925e0c4b34784dc681"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
-  depends_on "pkgconf" => :build
   depends_on arch: :arm64
-  depends_on "ffmpeg"
   depends_on "libsndfile"
   depends_on macos: :ventura
   depends_on "portaudio"
   depends_on "python@3.13"
 
-  resource "faster-whisper" do
-    url "https://files.pythonhosted.org/packages/05/99/49ee85903dee060d9f08297b4a342e5e0bcfca2f027a07b4ee0a38ab13f9/faster_whisper-1.2.1-py3-none-any.whl"
-    sha256 "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7"
+  preserve_rpath
+
+  resource "mlx-whisper" do
+    url "https://files.pythonhosted.org/packages/22/b7/a35232812a2ccfffcb7614ba96a91338551a660a0e9815cee668bf5743f0/mlx_whisper-0.4.3-py3-none-any.whl"
+    sha256 "6b82b6597a994643a3e5496c7bc229a672e5ca308458455bfe276e76ae024489"
   end
 
-  resource "ctranslate2" do
-    url "https://files.pythonhosted.org/packages/34/6d/eb49ba05db286b4ea9d5d3fcf5f5cd0a9a5e218d46349618d5041001e303/ctranslate2-4.7.1-cp313-cp313-macosx_11_0_arm64.whl"
-    sha256 "6b2abf2929756e3ec6246057b56df379995661560a2d776af05f9d97f63afcf5"
+  resource "mlx" do
+    url "https://files.pythonhosted.org/packages/ca/20/c6c5fb998c7834d094b2bfb9f003b5246cb270f0266da055c55546c34999/mlx-0.31.2-cp313-cp313-macosx_26_0_arm64.whl"
+    sha256 "c05981684279a8935d58b0dde3ea5b02d210c3bad3319aa0e9934ec2df165752"
   end
 
-  resource "onnxruntime" do
-    url "https://files.pythonhosted.org/packages/d2/ee/db3ac55ef770347a926ac0f1317df0ab42c8bc604350833b30c7356bf936/onnxruntime-1.25.1-cp313-cp313-macosx_14_0_arm64.whl"
-    sha256 "e9d9b3b1694196bc3c5bc66f760a237a5e27d7688aaa2e2c9c0f66abd0486699"
-  end
-
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/b1/16/95309993f1d3748cd644e02e38b75d50cbc0d9561d21f390a76242ce073f/pyyaml-6.0.3-cp313-cp313-macosx_11_0_arm64.whl"
-    sha256 "2283a07e2c21a2aa78d9c4442724ec1eb15f5e42a723b99cb3d822d48f5f7ad1"
-  end
-
-  resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/e2/6a/068ed9f6e444c9d7e9d55ce134181325700f3d7f30410721bdc8f848d727/tokenizers-0.23.1-cp310-abi3-macosx_11_0_arm64.whl"
-    sha256 "e0948bbb1ac1d7cdfc9fb6d62c596e3b7550036ad60ecd654a66ad273326324e"
-  end
-
-  resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/89/a5/33b49ba7bea7c41bb37f74ec0f8beea0831e052330196633fe2c77516ea6/huggingface_hub-1.14.0-py3-none-any.whl"
-    sha256 "efe075535c62e130b30e836b138e13785f6f043d1f0539e0a39aa411a99e90b8"
-  end
-
-  resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/9b/ff/edcc2b40162bef3ff78e14ab637e5f3b89243d6aee72f5949d3bb6a5af83/hf_xet-1.5.0-cp37-abi3-macosx_11_0_arm64.whl"
-    sha256 "fd6e5a9b0fdac4ed03ed45ef79254a655b1aaab514a02202617fbf643f5fdf7a"
-  end
-
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl"
-    sha256 "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
-  end
-
-  resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl"
-    sha256 "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"
-  end
-
-  resource "av" do
-    url "https://files.pythonhosted.org/packages/4e/f0/8c8dca97ae0cf00e8e2a53bb5cb9aca5fd484f585ef3e9b412200aff3ebd/av-17.0.1.tar.gz"
-    sha256 "fbcbd4aa43bca6a8691816283112d1659a27f407bbeb66d1397023691339f5d4"
-  end
-
-  resource "filelock" do
-    url "https://files.pythonhosted.org/packages/81/47/dd9a212ef6e343a6857485ffe25bba537304f1913bdbed446a23f7f592e1/filelock-3.29.0-py3-none-any.whl"
-    sha256 "96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258"
-  end
-
-  resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/d5/0c/043d5e551459da400957a1395e0febbf771446ff34291afcbe3d8be2a279/fsspec-2026.4.0-py3-none-any.whl"
-    sha256 "11ef7bb35dab8a394fde6e608221d5cf3e8499401c249bebaeaad760a1a8dec2"
-  end
-
-  resource "h11" do
-    url "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl"
-    sha256 "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+  resource "mlx-metal" do
+    url "https://files.pythonhosted.org/packages/99/82/11fd62a8d7a3e96e5c43220b17de0151e3f10101f8bb3b865f5bd9cdd074/mlx_metal-0.31.2-py3-none-macosx_26_0_arm64.whl"
+    sha256 "84ffb60ee503f03eb684f5fb168d5cff31e2a16b7f27c1731eaf7662bd6e9b46"
   end
 
   resource "numpy" do
     url "https://files.pythonhosted.org/packages/e5/87/499737bfba066b4a3bebff24a8f1c5b2dee410b209bc6668c9be692580f0/numpy-2.4.4-cp313-cp313-macosx_14_0_arm64.whl"
     sha256 "4a19d9dba1a76618dd86b164d608566f393f8ec6ac7c44f0cc879011c45e65af"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl"
-    sha256 "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
   end
 
   resource "pydantic" do
@@ -106,9 +51,9 @@ class Huske < Formula
     sha256 "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
   end
 
-  resource "pyobjc-framework-CoreMedia" do
-    url "https://files.pythonhosted.org/packages/a5/ea/aee26a475b4af8ed4152d3c50b1b8955241b8e95ae789aa9ee296953bc6a/pyobjc_framework_coremedia-12.1-cp313-cp313-macosx_10_13_universal2.whl"
-    sha256 "98e885b7a092083fceaef0a7fc406a01ba7bcd3318fb927e59e055931c99cac8"
+  resource "pyobjc-framework-CoreAudio" do
+    url "https://files.pythonhosted.org/packages/3d/ce/45808618fefc760e2948c363e0a3402ff77690c8934609cd07b19bc5b15f/pyobjc_framework_coreaudio-12.1-cp313-cp313-macosx_10_13_universal2.whl"
+    sha256 "3d8ef424850c8ae2146f963afaec6c4f5bf0c2e412871e68fb6ecfb209b8376f"
   end
 
   resource "pyobjc-core" do
@@ -121,9 +66,19 @@ class Huske < Formula
     sha256 "5a3dcd491cacc2f5a197142b3c556d8aafa3963011110102a093349017705118"
   end
 
+  resource "pyobjc-framework-CoreMedia" do
+    url "https://files.pythonhosted.org/packages/a5/ea/aee26a475b4af8ed4152d3c50b1b8955241b8e95ae789aa9ee296953bc6a/pyobjc_framework_coremedia-12.1-cp313-cp313-macosx_10_13_universal2.whl"
+    sha256 "98e885b7a092083fceaef0a7fc406a01ba7bcd3318fb927e59e055931c99cac8"
+  end
+
   resource "pyobjc-framework-ScreenCaptureKit" do
     url "https://files.pythonhosted.org/packages/45/f9/ff713b8c4659f9ef1c4dbb8ca4b59c4b22d9df48471230979d620709e3b4/pyobjc_framework_screencapturekit-12.1-cp313-cp313-macosx_10_13_universal2.whl"
     sha256 "168125388fb35c6909bec93b259508156e89b9e30fec5748d4a04fd0157f0e0d"
+  end
+
+  resource "PyYAML" do
+    url "https://files.pythonhosted.org/packages/b1/16/95309993f1d3748cd644e02e38b75d50cbc0d9561d21f390a76242ce073f/pyyaml-6.0.3-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "2283a07e2c21a2aa78d9c4442724ec1eb15f5e42a723b99cb3d822d48f5f7ad1"
   end
 
   resource "rich" do
@@ -166,11 +121,6 @@ class Huske < Formula
     sha256 "a8453e9b9e636ec59bd9e79bbd4a72f025981b3ba0f5837aebf48f02f37a7f9f"
   end
 
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl"
-    sha256 "ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf"
-  end
-
   resource "typer" do
     url "https://files.pythonhosted.org/packages/3f/f9/2b3ff4e56e5fa7debfaf9eb135d0da96f3e9a1d5b27222223c7296336e5f/typer-0.25.1-py3-none-any.whl"
     sha256 "75caa44ed46a03fb2dab8808753ffacdbfea88495e74c85a28c5eefcf5f39c89"
@@ -179,11 +129,6 @@ class Huske < Formula
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl"
     sha256 "571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320"
-  end
-
-  resource "cython" do
-    url "https://files.pythonhosted.org/packages/ff/fa/d3c15189f7c52aaefbaea76fb012119b04b9013f4bf446cb4eb4c26c4e6b/cython-3.2.4-py3-none-any.whl"
-    sha256 "732fc93bc33ae4b14f6afaca663b916c2fdd5dcbfad7114e17fb2434eeaea45c"
   end
 
   resource "click" do
@@ -206,6 +151,51 @@ class Huske < Formula
     sha256 "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
   end
 
+  resource "huggingface-hub" do
+    url "https://files.pythonhosted.org/packages/89/a5/33b49ba7bea7c41bb37f74ec0f8beea0831e052330196633fe2c77516ea6/huggingface_hub-1.14.0-py3-none-any.whl"
+    sha256 "efe075535c62e130b30e836b138e13785f6f043d1f0539e0a39aa411a99e90b8"
+  end
+
+  resource "hf-xet" do
+    url "https://files.pythonhosted.org/packages/9b/ff/edcc2b40162bef3ff78e14ab637e5f3b89243d6aee72f5949d3bb6a5af83/hf_xet-1.5.0-cp37-abi3-macosx_11_0_arm64.whl"
+    sha256 "fd6e5a9b0fdac4ed03ed45ef79254a655b1aaab514a02202617fbf643f5fdf7a"
+  end
+
+  resource "httpx" do
+    url "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl"
+    sha256 "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl"
+    sha256 "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"
+  end
+
+  resource "filelock" do
+    url "https://files.pythonhosted.org/packages/81/47/dd9a212ef6e343a6857485ffe25bba537304f1913bdbed446a23f7f592e1/filelock-3.29.0-py3-none-any.whl"
+    sha256 "96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258"
+  end
+
+  resource "fsspec" do
+    url "https://files.pythonhosted.org/packages/d5/0c/043d5e551459da400957a1395e0febbf771446ff34291afcbe3d8be2a279/fsspec-2026.4.0-py3-none-any.whl"
+    sha256 "11ef7bb35dab8a394fde6e608221d5cf3e8499401c249bebaeaad760a1a8dec2"
+  end
+
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl"
+    sha256 "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl"
+    sha256 "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
+  end
+
+  resource "tqdm" do
+    url "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl"
+    sha256 "ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf"
+  end
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl"
     sha256 "08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708"
@@ -221,14 +211,19 @@ class Huske < Formula
     sha256 "3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a"
   end
 
-  resource "flatbuffers" do
-    url "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl"
-    sha256 "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/cb/98/6af411189d9413534c3eb691182bff1f5c6d44ed2f93f2edfe52a1bbceb8/more_itertools-11.0.2-py3-none-any.whl"
+    sha256 "6e35b35f818b01f691643c6c611bc0902f2e92b46c18fffa77ae1e7c46e912e4"
   end
 
-  resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ec/11/3325d41e6ee15bf1125654301211247b042563bcc898784351252549a8ad/protobuf-7.34.1-cp310-abi3-macosx_10_9_universal2.whl"
-    sha256 "d8b2cc79c4d8f62b293ad9b11ec3aebce9af481fa73e64556969f7345ebf9fc7"
+  resource "numba" do
+    url "https://files.pythonhosted.org/packages/79/37/14a4579049c1eb673afd0de0cb4842982acd55b9ce2643e763db858bcea0/numba-0.65.1-cp313-cp313-macosx_12_0_arm64.whl"
+    sha256 "1735c15c1134a5108b4d6a5c77fc0947924ea066a738dc09a52008c13df9cad3"
+  end
+
+  resource "llvmlite" do
+    url "https://files.pythonhosted.org/packages/77/6f/4615353e016799f80fa52ccb270a843c413b22361fadda2589b2922fb9b0/llvmlite-0.47.0-cp313-cp313-macosx_12_0_arm64.whl"
+    sha256 "a3c6a735d4e1041808434f9d440faa3d78d9b4af2ee64d05a66f351883b6ceec"
   end
 
   resource "pycparser" do
@@ -236,9 +231,69 @@ class Huske < Formula
     sha256 "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
   end
 
+  resource "scipy" do
+    url "https://files.pythonhosted.org/packages/5b/58/3ce96251560107b381cbd6e8413c483bbb1228a6b919fa8652b0d4090e7f/scipy-1.17.1-cp313-cp313-macosx_14_0_arm64.whl"
+    sha256 "7ff200bf9d24f2e4d5dc6ee8c3ac64d739d3a89e2326ba68aaf6c4a2b838fd7d"
+  end
+
+  resource "tiktoken" do
+    url "https://files.pythonhosted.org/packages/1f/05/dcf94486d5c5c8d34496abe271ac76c5b785507c8eae71b3708f1ad9b45a/tiktoken-0.12.0-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "a01b12f69052fbe4b080a2cfb867c4de12c704b56178edf1d1d7b273561db160"
+  end
+
+  resource "regex" do
+    url "https://files.pythonhosted.org/packages/5a/92/4712b9fe6a33d232eeb1c189484b80c6c4b8422b90e766e1195d6e758207/regex-2026.4.4-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "8fae3c6e795d7678963f2170152b0d892cf6aee9ee8afc8c45e6be38d5107fe7"
+  end
+
+  resource "requests" do
+    url "https://files.pythonhosted.org/packages/d7/8e/7540e8a2036f79a125c1d2ebadf69ed7901608859186c856fa0388ef4197/requests-2.33.1-py3-none-any.whl"
+    sha256 "4e6d1ef462f3626a1f0a0a9c42dd93c63bad33f9f1c1937509b8c5c8718ab56a"
+  end
+
+  resource "charset-normalizer" do
+    url "https://files.pythonhosted.org/packages/c1/3b/66777e39d3ae1ddc77ee606be4ec6d8cbd4c801f65e5a1b6f2b11b8346dd/charset_normalizer-3.4.7-cp313-cp313-macosx_10_13_universal2.whl"
+    sha256 "f496c9c3cc02230093d8330875c4c3cdfc3b73612a5fd921c65d39cbcef08063"
+  end
+
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl"
+    sha256 "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
+  end
+
+  resource "torch" do
+    url "https://files.pythonhosted.org/packages/87/89/5ea6722763acee56b045435fb84258db7375c48165ec8be7880ab2b281c5/torch-2.11.0-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "1e6debd97ccd3205bbb37eb806a9d8219e1139d15419982c09e23ef7d4369d18"
+  end
+
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl"
-    sha256 "a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb"
+    url "https://files.pythonhosted.org/packages/e1/e3/c164c88b2e5ce7b24d667b9bd83589cf4f3520d97cad01534cd3c4f55fdb/setuptools-81.0.0-py3-none-any.whl"
+    sha256 "fdd925d5c5d9f62e4b74b30d6dd7828ce236fd6ed998a08d81de62ce5a6310d6"
+  end
+
+  resource "networkx" do
+    url "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl"
+    sha256 "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+  end
+
+  resource "sympy" do
+    url "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl"
+    sha256 "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"
+  end
+
+  resource "mpmath" do
+    url "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl"
+    sha256 "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+  end
+
+  resource "Jinja2" do
+    url "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl"
+    sha256 "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+  end
+
+  resource "MarkupSafe" do
+    url "https://files.pythonhosted.org/packages/9c/d9/5f7756922cdd676869eca1c4e3c0cd0df60ed30199ffd775e319089cb3ed/markupsafe-3.0.3-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "116bb52f642a37c115f517494ea5feb03889e04df47eeff5b130b1808ce7c219"
   end
 
   def install
@@ -247,28 +302,21 @@ class Huske < Formula
     wheels.mkpath
     resource_map = resources.to_h { |resource| [resource.name, resource] }
 
-    %w[setuptools cython].each do |name|
+    %w[setuptools].each do |name|
       resource = resource_map.delete(name)
+      next if resource.nil?
+
       wheel = wheels/resource.downloader.basename
       cp resource.cached_download, wheel
       venv.pip_install wheel
     end
 
     resource_map.each_value do |resource|
-      if resource.name == "av"
-        resource.stage do
-          venv.pip_install Pathname.pwd, build_isolation: false
-        end
-        next
-      end
-
       wheel = wheels/resource.downloader.basename
       cp resource.cached_download, wheel
       venv.pip_install wheel
     end
-    Dir[libexec/"lib/python*/site-packages/av/.dylibs/*.dylib"].each do |dylib|
-      MachOPathname.wrap(dylib).change_dylib_id("@loader_path/#{File.basename(dylib)}")
-    end
+
     venv.pip_install_and_link buildpath
   end
 
