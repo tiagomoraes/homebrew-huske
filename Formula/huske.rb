@@ -3,8 +3,8 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/98/c2/087f72ab61b69480add6aeadf45a705c7d0fbe8aa61eb2ce2b5e03f13347/huske-0.6.0.tar.gz"
-  sha256 "b8f981e7da875c1e46353beee2ccc570c251dafbf32c1e96a03f0b244c68f8bf"
+  url "https://files.pythonhosted.org/packages/b3/26/57595c689e2216e0bba1e9e902d9dea69275ff48d0da00e95867d70796ca/huske-0.7.0.tar.gz"
+  sha256 "0579661de2c0bba8d516796c31aa39ec066b6385e427ccc172e8c951dbdbd9df"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
@@ -124,6 +124,11 @@ class Huske < Formula
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/c7/18/c86eb8e0202e32dd3df50d43d7ff9854f8e0603945ff398974c1d91ac1ef/tomli_w-1.2.0-py3-none-any.whl"
     sha256 "188306098d013b691fcadc011abd66727d3c414c571bb01b1a174ba8c983cf90"
+  end
+
+  resource "setproctitle" do
+    url "https://files.pythonhosted.org/packages/23/ae/afc141ca9631350d0a80b8f287aac79a76f26b6af28fd8bf92dae70dc2c5/setproctitle-1.3.7-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "3384e682b158d569e85a51cfbde2afd1ab57ecf93ea6651fe198d0ba451196ee"
   end
 
   resource "typer" do
