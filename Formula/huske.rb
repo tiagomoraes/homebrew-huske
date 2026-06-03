@@ -3,8 +3,8 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/7b/37/5a91e1784d93437f626966d10b1d4659785a2652f3736be819e9e55c9b01/huske-0.7.1.tar.gz"
-  sha256 "5f45640f4b629ee1a46abfcca4f109bf4b675f6b380b5996d58af4e249b3d479"
+  url "https://files.pythonhosted.org/packages/1d/c0/866e1dc4e5e2db3c1ee542ff025d33009e5f29d23e40e9c4a4524897b2ae/huske-0.7.2.tar.gz"
+  sha256 "eba6b7d923b69e548d5162006a4058bdd4c5df7be375e3ce75ad5f1942518d8f"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
@@ -182,8 +182,8 @@ class Huske < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/81/47/dd9a212ef6e343a6857485ffe25bba537304f1913bdbed446a23f7f592e1/filelock-3.29.0-py3-none-any.whl"
-    sha256 "96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258"
+    url "https://files.pythonhosted.org/packages/4c/a0/614c5fe402fd88951df45f4dda2fa3b4e17a99ecd92340771929169b3b95/filelock-3.29.1-py3-none-any.whl"
+    sha256 "85199dfd706869641b72b2e8955d5416a4b2b7dc4b0e8e6d97b4cc1299a6983b"
   end
 
   resource "fsspec" do
