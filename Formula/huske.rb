@@ -3,8 +3,8 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/23/48/0f65424ed787e6f0ff846164b23eb77a884671be97c2ebeb20631d983c47/huske-0.8.0.tar.gz"
-  sha256 "471d5614c513d4e69582e6808cf58f54c52ff238e24cbaf1043d80173c68e970"
+  url "https://files.pythonhosted.org/packages/e5/0e/e92a346856250b692839f2b9d2d30ebccbad9985e8a3d7f5bcb5e9d0abf8/huske-0.8.1.tar.gz"
+  sha256 "d354e8c4b8bff22967ff70cfd6fa84e29f286e6a67578252c26b682bf91847a8"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
@@ -167,8 +167,8 @@ class Huske < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/9b/ff/edcc2b40162bef3ff78e14ab637e5f3b89243d6aee72f5949d3bb6a5af83/hf_xet-1.5.0-cp37-abi3-macosx_11_0_arm64.whl"
-    sha256 "fd6e5a9b0fdac4ed03ed45ef79254a655b1aaab514a02202617fbf643f5fdf7a"
+    url "https://files.pythonhosted.org/packages/35/94/4b2ecfbad8f8b04701a23aefb62f540b9137d058b7e1dbef16a32676f0e9/hf_xet-1.5.1-cp37-abi3-macosx_11_0_arm64.whl"
+    sha256 "94e761bbd266bf4c03cee73753916062665ce8365aa40ed321f45afcb934b41e"
   end
 
   resource "httpx" do
@@ -202,8 +202,8 @@ class Huske < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/47/aa/218a0eb34de1f753c83e4d0d1c8e7c4cef27f20dcb8342e024f63a80dc86/tqdm-4.68.1-py3-none-any.whl"
-    sha256 "fea4a90e4023f764914569f7802a297277c5ab1a66be5144143e142e1a4031d8"
+    url "https://files.pythonhosted.org/packages/eb/75/1a0392bcc21c44dcdf87b3cf2d137e7829be2c083a1e38d44efca3d57a16/tqdm-4.68.2-py3-none-any.whl"
+    sha256 "d4240441fb5353290b87d6a85968c9decc131a99b8c7faa28269d829de669ede"
   end
 
   resource "anyio" do
