@@ -3,8 +3,8 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/dd/5f/7666cf1e855cf6cfe22b0da5774952a5b5ae68068552799d4f7c9c133ee9/huske-0.9.0.tar.gz"
-  sha256 "095c13a77efa9cda4c333152d8977a8ca616da5dd553fb5dbe351cbb5928916d"
+  url "https://files.pythonhosted.org/packages/c6/19/fc66a64538bca5cc3efe3efa56fe968aead46f67ae4fcfd5aee851ff6ef0/huske-0.9.1.tar.gz"
+  sha256 "e28d464fd3aeb7da64d352938f1b65bcb5d16f8b75a90c44bdd351b6c866e9a6"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
@@ -142,8 +142,8 @@ class Huske < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl"
-    sha256 "482be17c6991b8c19c5429a1e995d9b0efdbb63172824c41f99965dc0ade8ec2"
+    url "https://files.pythonhosted.org/packages/fb/e2/79c688af8b210d232694e31e59da9f6ec747bae31c3f5946e4e9b98860d5/click-8.4.2-py3-none-any.whl"
+    sha256 "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"
   end
 
   resource "shellingham" do
@@ -162,8 +162,8 @@ class Huske < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/8e/b5/ff8516e74b459da3dce9567540c39f2d305ee7a2655109f6802873ff1588/huggingface_hub-1.20.1-py3-none-any.whl"
-    sha256 "274448a45c1ba6f112fe2fb168ead05574c654faa156904157a84085cfae14bd"
+    url "https://files.pythonhosted.org/packages/4f/85/b505a99a133d9f99d21af182af416e9baef70bdeef019983479651e494c2/huggingface_hub-1.21.0-py3-none-any.whl"
+    sha256 "eadaa3678c512c82aea69e8675d90a184861e68de32f1105668628b4dce0e7cd"
   end
 
   resource "hf-xet" do
@@ -207,8 +207,8 @@ class Huske < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/ba/16/9826f089383c593cdfc4a6e5aca94d9e91ae1692c57af82c3b2aa5e810f7/anyio-4.14.0-py3-none-any.whl"
-    sha256 "dd9b7a2a9799ed6552fde617b2c5df02b7fdd7d88392fc48101e51bae46164d9"
+    url "https://files.pythonhosted.org/packages/b0/7b/90df4a0a816d98d6ea26f559d87836d494a2cf1fcf063be67df50a7bcc30/anyio-4.14.1-py3-none-any.whl"
+    sha256 "4e5533c5b8ff0a24f5d7a176cbe6877129cd183893f66b537f8f227d10527d72"
   end
 
   resource "idna" do
@@ -252,8 +252,8 @@ class Huske < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/2d/e7/d0eaf5713828417b9e5648cf81fa9bacd4961f6ab98c380c2034f8716e35/regex-2026.5.9-cp313-cp313-macosx_11_0_arm64.whl"
-    sha256 "a8820737949116ffff55fe18f9fc644530063ba6ebfcb8314239416e78f1347c"
+    url "https://files.pythonhosted.org/packages/bb/7f/cd004e13fcad23b3794a82307dfd222e6365eb7f598bd3caab148a830bff/regex-2026.6.28-cp313-cp313-macosx_11_0_arm64.whl"
+    sha256 "6bf295f2c59de77d1ea7de053607ae4dc9ceb3d57bbb6c7ec51ef4acc4ccff94"
   end
 
   resource "requests" do
