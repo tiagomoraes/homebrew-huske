@@ -3,8 +3,8 @@ class Huske < Formula
 
   desc "Always-on terminal audio recorder and local transcription app"
   homepage "https://github.com/tiagomoraes/huske"
-  url "https://files.pythonhosted.org/packages/c6/19/fc66a64538bca5cc3efe3efa56fe968aead46f67ae4fcfd5aee851ff6ef0/huske-0.9.1.tar.gz"
-  sha256 "e28d464fd3aeb7da64d352938f1b65bcb5d16f8b75a90c44bdd351b6c866e9a6"
+  url "https://files.pythonhosted.org/packages/0b/c1/a1f2e8431f8f2417992aaba8c48534fa7ac814724e4aa19502a7e4b8805a/huske-0.10.0.tar.gz"
+  sha256 "411398e0873210fcee9effd3af74c805541a98ef20362b0cc23b3b916b9224f7"
   license "MIT"
   head "https://github.com/tiagomoraes/huske.git", branch: "develop"
 
